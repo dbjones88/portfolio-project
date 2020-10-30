@@ -1,17 +1,16 @@
-from django.db import models  # Blog model
-
+from django.db import models
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     pub_date = models.DateTimeField()
-    body = models.TextField()
+    body = models.TextField(default=None)
     image = models.ImageField(upload_to='images/')
 
+    def __str__(self):
+        return self.title
 
-# Add the Blog app to the settings
+    def summary(self):
+        return self.body[:100] # 1st 100 characters
 
-# Create a migration
-
-# Migrate
-
-# Add to admin
+    def pub_date_pretty(self):
+        return self.pub_date.strftime('%b %e %Y')
