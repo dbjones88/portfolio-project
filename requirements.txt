@@ -1,0 +1,7 @@
+Django==2.2.16
+django-ckeditor==6.0.0
+django-js-asset==1.2.2
+Pillow==8.0.1
+psycopg2-binary==2.8.6
+pytz==2020.1
+sqlparse==0.4.1
