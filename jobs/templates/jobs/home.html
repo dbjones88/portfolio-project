@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
-  <title>Album example · Bootstrap</title>
+  <title>DBJones</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -43,15 +44,15 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">D. Bryson Jones</a>
+      <a class="navbar-brand" href="{% url 'home' %}">D. B. Jones</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-link" href="#">Twitter</a>
-          <a class="nav-link" href="#">Resume</a>
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="http://twitter.com">Twitter</a>
+          <a class="nav-link" href="{% static 'Python_Notes.pdf' %}">Resume</a>
+          <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -61,11 +62,12 @@
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1>Hi, I'm Dan</h1>
-        <p class="lead text-muted">I make websites and Blog about Linux</p>
+        <h1>Hi, I'm Dan</h1><h5 class="lead text-muted">(on the right)</h5>
+        <p class="lead text-muted">I make websites and Blog about Linux and stuff</p>
         <p>
           <a href="mailto:1dbjones@gmail.com" class="btn btn-primary my-2">Email</a>
         </p>
+        <img src="{% static 'Dan_Nancy.jpg' %}" height="300"/>
       </div>
     </section>
 
